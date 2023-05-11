@@ -31,14 +31,14 @@ const getOneRecord = async (req,res)=>{
     const id = req.params.id;
     console.log(id)
     const singleRecord= await Finance.findById(id).then((Employee)=>{
-        res.json(refund);
+        res.json(singleRecord);
     }).catch((err)=>{
         res.json(err.message)
     })
 }
 
 // delete Finance Record
-const deleterecord = async(req,res)=>{
+const deleteRecord = async(req,res)=>{
     const id = req.params.id;
     
     await Finance.findByIdAndDelete(id).then(()=>{
